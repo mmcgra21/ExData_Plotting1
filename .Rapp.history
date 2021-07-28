@@ -7,36 +7,8 @@ cd(3)
 cd("3")
 cd("Coursera")
 setwd("Coursera/DataScience/Exploratory_Data_Analysis/Project1")
-data <- read.table("household_power_consumption.txt", header=TRUE, sep=";")
-data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
-data
-data <- subset(data, Date %in% c("1/2/2007", "2/2/2007"))#
-## Reset the row indices.#
-rownames(data) <- NULL
-dim(data)
-data
-dev.cur()
-data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
-data <- subset(data, Date %in% c("1/2/2007", "2/2/2007"))
-rownames(data) <- NULL
-data$Global_active_power <- as.numeric(data$Global_active_power)
-hist(data$Global_active_power,#
-     col="red",#
-     xlab="Global Active Power (kilowatts)",#
-     ylab="Frequency",#
-     main="Global Active Power"#
-     )
-dev.off()
-dev.cur()
-png("plot1.png")
-hist(data$Global_active_power,#
-     col="red",#
-     xlab="Global Active Power (kilowatts)",#
-     ylab="Frequency",#
-     main="Global Active Power"#
-     )
-dev.off()
-dev.off()
+dir()
+source("plot1.R")
 source("plot1.R")
 source("plot2.R")
 source("plot3.R")
