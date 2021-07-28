@@ -1,3 +1,14 @@
+## First download and unzip the dataset at 
+## https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+## and make sure it is saved in a file called "household_power_consumption.txt".
+if (!("household_power_consumption.txt" %in% dir())) {
+    download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",
+                  "household_power_consumption.zip",
+                  "curl")
+    unzip("household_power_consumption.zip", "household_power_consumption.txt")
+    unlink("household_power_consumption.zip")
+}
+
 ## Read in data txt file as table (it will read in the entire dataset
 ## (2,075,259 rows and 9 columns), so ensure you have enough memory space).
 data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
